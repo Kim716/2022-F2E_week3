@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <style>
+      .container {
+        display: flex;
+      }
+
+      .list,
+      .put {
+        border: 2px solid #000;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .list p {
+        border: 1px dotted #555;
+        padding: 10px 30px;
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>test</h1>
+    <div class="container">
+      <h3>list</h3>
+      <div class="list">
+        
+        <p data-id="1" >draggable1</p>
+        <p data-id="2" >draggable2</p>
+        <p data-id="3" >draggable3</p>
+        <p data-id="4" >draggable4</p>
+        <p data-id="5" >draggable5</p>
+      </div>
+      
+        <h3>backlog</h3>
+        <div class="put"></div>
+        <p class="total-score"></p>
+      </div>
+    </div>
+
+    <!-- CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script type="module" src="./test.js"></script>
+  </body>
+</html>
