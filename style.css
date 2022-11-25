@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --primary-color: #ffac89;
+  --secondary-color: #ff7d45;
+  --tertiary-color: #fff8ba;
+  --light-grey: #f2ece8;
+  --mid-grey: #cfc8c4;
+  --dark-grey: #8e7e74;
+  font-family: "Noto Sans TC", Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  background: url("./image/bg-img_工作區域 1_工作區域 1 2.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opening-page p {
+  /* border: 3px solid blue; */
+  text-align: center;
+  letter-spacing: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0px 1px var(--dark-grey), 0px -1px var(--dark-grey),
+    1px 0px var(--dark-grey), -1px 0px var(--dark-grey);
+}
+
+.game-title,
+.pink-character,
+.yellow-character,
+.brown-character,
+.green-character {
+  position: absolute;
+}
+
+.game-title {
+  top: 27%;
+  left: 25%;
+}
+
+.game-title img {
+  width: 70%;
+}
+
+.pink-character {
+  top: -10%;
+  left: -5%;
+  rotate: 110deg;
+  width: 16%;
+}
+
+.pink-character img {
+  width: 100%;
+}
+
+.yellow-character {
+  bottom: -27%;
+  left: 5%;
+  rotate: 15deg;
+  width: 20%;
+}
+
+.yellow-character img {
+  width: 100%;
+}
+
+.brown-character {
+  bottom: -38%;
+  right: 15%;
+  rotate: 345deg;
+  width: 23%;
+}
+
+.brown-character img {
+  width: 100%;
+}
+
+.green-character {
+  top: -15%;
+  right: -3%;
+  rotate: 240deg;
+  width: 16%;
+}
+
+.green-character img {
+  width: 100%;
+}
