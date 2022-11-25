@@ -203,7 +203,7 @@ html {
   margin-bottom: 2rem;
 }
 
-.talking2 button {
+.start-btn {
   float: right;
   border: none;
   border-radius: 5px;
@@ -212,6 +212,12 @@ html {
 
   font-size: 2.5rem;
   color: #fff;
+}
+
+.start-btn:hover {
+  cursor: pointer;
+  background: var(--secondary-color);
+  transition: 0.5s;
 }
 
 .remove {
