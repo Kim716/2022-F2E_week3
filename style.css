@@ -140,14 +140,14 @@ html {
   height: 100%;
 }
 
-.talking {
+.talking,
+.talking2 {
   position: absolute;
   top: 12%;
   left: 16%;
   border-radius: 1rem;
-  width: 15%;
   background: #fff;
-  padding: 1rem 0 3rem;
+  padding: 1rem 6rem 3rem;
   box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
 
   animation: slideInLeft;
@@ -187,6 +187,31 @@ html {
 
 .character-with-name img {
   width: 100%;
+}
+
+.talking2 {
+  padding: 4rem 6rem;
+
+  animation: fadeIn;
+  animation-duration: 2s;
+}
+
+.talking2 pre {
+  font-size: 2rem;
+  color: var(--dark-grey);
+  line-height: 4rem;
+  margin-bottom: 2rem;
+}
+
+.talking2 button {
+  float: right;
+  border: none;
+  border-radius: 5px;
+  background: var(--primary-color);
+  padding: 3px 10px;
+
+  font-size: 2.5rem;
+  color: #fff;
 }
 
 .remove {
