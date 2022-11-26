@@ -1,3 +1,136 @@
 .talking-box {
   top: 8%;
 }
+
+.PO-mission {
+  border: 3px solid blue;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mission {
+  top: 5%;
+  left: 10%;
+
+  width: 80%;
+  padding: 30px 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: slideInDown;
+  animation-duration: 1s;
+}
+
+.mission p {
+  line-height: 3rem;
+  margin-bottom: 0;
+}
+
+.mission img {
+  height: 3rem;
+  margin: 0 8px 0 8px;
+  vertical-align: top;
+}
+
+.game-panel {
+  position: absolute;
+  bottom: -3%;
+  left: 32%;
+
+  height: 80%;
+  width: 36%;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
+  text-align: center;
+}
+
+.game-panel h3 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--dark-grey);
+  margin: 3rem 0;
+}
+
+.game-panel p {
+  font-size: 1.5rem;
+  color: var(--mid-grey);
+  margin: 2rem auto;
+}
+
+/* 拖放區  */
+.drop-here,
+.drag-here {
+  width: 90%;
+  height: 50%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.empty-space {
+  border: 2px dashed var(--mid-grey);
+  height: 21%;
+}
+
+.finish-btn {
+  border: none;
+  border-radius: 1rem;
+  background: var(--primary-color);
+  padding: 7px 150px;
+  margin-top: 1rem;
+
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+/* 可拖移 */
+.drag-here {
+  position: absolute;
+  top: 0;
+  left: -90%;
+}
+
+.productBacklog {
+  border: 1px solid var(--dark-grey);
+  background: #d7ffae;
+  width: 100%;
+  height: 21%;
+  padding-left: 2rem;
+  color: var(--dark-grey);
+  font-size: 1.5rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productBacklog.one {
+  position: absolute;
+  top: 60%;
+  right: -190%;
+}
+.productBacklog.two {
+  position: absolute;
+  top: 100%;
+  right: -20%;
+}
+.productBacklog.three {
+  position: absolute;
+  top: 130%;
+  right: -180%;
+}
+.productBacklog.four {
+  position: absolute;
+  top: 100%;
+  right: -200%;
+}
+
+.remove {
+  display: none;
+}

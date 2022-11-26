@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="PO-page background">
-      <div class="talking-box description">
+      <div class="talking-box description remove">
         <p>
           哈囉~<span class="userName"></span>。 我是開發 A 組的 PO，小敏。<br /><br />
           PO也就是<span class="emphasize">產品負責人(Product Owner)</span
@@ -28,9 +28,40 @@
         </p>
         <button class="start-btn">開始試煉 ▶︎</button>
       </div>
-      <div class="person-in-charge">
+      <div class="person-in-charge remove">
         <div class="name">小敏</div>
         <img src="image/pink 職員.png" alt="" />
+      </div>
+      <div class="PO-mission">
+        <div class="mission talking-box">
+          <p>
+            請把需求放到產品待辦清單，並調整待辦的優先度順序。公司也推薦使用
+          </p>
+          <img src="./image/atlassian-jira-logo-large 1.png" alt="Jira logo" />
+          <p>來做任務的管理喔！</p>
+        </div>
+        <div class="game-panel">
+          <h3>產品待辦清單 ProductBacklog</h3>
+          <p>優先度高 ↑</p>
+          <div class="drop-here">
+            <div class="empty-space"></div>
+            <div class="empty-space"></div>
+            <div class="empty-space"></div>
+            <div class="empty-space"></div>
+          </div>
+          <p>優先度低 ↓</p>
+          <button class="finish-btn">我完成了！</button>
+          <div class="drag-here">
+            <div class="productBacklog one">會員系統（登入、註冊、管理)）</div>
+            <div class="productBacklog two">
+              後台職缺管理功能 （資訊上架、下架、顯示應徵者資料）
+            </div>
+            <div class="productBacklog three">
+              前台職缺列表 （職缺詳細內容、點選可發送應徵意願）
+            </div>
+            <div class="productBacklog four">應徵者的線上履歷編輯器</div>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./PO.js"></script>
