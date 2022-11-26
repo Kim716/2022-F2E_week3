@@ -22,26 +22,26 @@
 
   width: 40%;
 }
-.characters .character1 {
+.character1 {
   background: url("./image/Property\ 1=Initial.png");
   background-size: cover;
   width: 130px;
   height: 220px;
 }
-.characters .character1:hover {
+.character1:hover {
   background: url("./image/主角1.png");
   background-size: cover;
   cursor: pointer;
 }
 
-.characters .character2 {
+.character2 {
   /* border: 3px solid tomato; */
   background: url("./image/Property\ 2=Initial.png");
   background-size: cover;
   width: 130px;
   height: 240px;
 }
-.characters .character2:hover {
+.character2:hover {
   background: url("./image/主角2.png");
   background-size: cover;
   cursor: pointer;
@@ -160,4 +160,14 @@
 
 .remove {
   display: none;
+}
+
+.show1 {
+  background: url("./image/主角1.png");
+  background-size: cover;
+}
+
+.show2 {
+  background: url("./image/主角2.png");
+  background-size: cover;
 }
