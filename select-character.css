@@ -79,7 +79,7 @@
 }
 
 /* 未輸入姓名 modal */
-.modal-background {
+.full-modal {
   position: absolute;
   top: 0;
   left: 0;
