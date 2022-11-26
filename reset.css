@@ -127,3 +127,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --primary-color: #ffac89;
+  --secondary-color: #ff7d45;
+  --tertiary-color: #fff8ba;
+  --light-grey: #f2ece8;
+  --mid-grey: #cfc8c4;
+  --dark-grey: #8e7e74;
+  font-family: "Noto Sans TC", Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  overflow: hidden;
+}

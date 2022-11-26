@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprint ! 菜鳥 !</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./select-character.css" />
+  </head>
+  <body>
+    <div class="select-character-page">
+      <h3 class="hint">請選擇代表你的角色。</h3>
+      <div class="characters">
+        <div class="character1"></div>
+        <div class="character2"></div>
+      </div>
+      <form id="create-form" action="">
+        <input id="name-input" type="text" placeholder="請輸入你的名字。" />
+        <button type="submit" class="submit-btn">確定</button>
+      </form>
+
+      <!-- 未輸入姓名 modal -->
+      <div class="modal-background remove">
+        <div class="modal">
+          <pre>
+嘿！菜鳥！
+不打算報上名嗎？</pre
+          >
+          <button class="ok-btn">好的 ▶︎</button>
+        </div>
+        <div class="character-with-name">
+          <div class="name">？？？</div>
+          <img src="image/pink 職員.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
