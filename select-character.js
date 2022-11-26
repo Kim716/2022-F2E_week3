@@ -58,6 +58,7 @@ view.nameForm.addEventListener("submit", (e) => {
   // 如果沒有輸入東西，或者空白，跳出提示
   if (nameInput.trim().length === 0) {
     view.toggleModal();
+    return;
   }
 
   // 將名字存在 local storage
