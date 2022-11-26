@@ -130,6 +130,7 @@ table {
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 
+/* for this project */
 :root {
   --primary-color: #ffac89;
   --secondary-color: #ff7d45;
@@ -147,4 +148,147 @@ table {
 html {
   font-size: 10px;
   overflow: hidden;
+}
+
+/* 共用背景 */
+.background {
+  width: 100vw;
+  height: 100vh;
+
+  background: url("./image/bg-img_工作區域 1_工作區域 1 2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 對話框 */
+.talking-box {
+  position: absolute;
+  top: 12%;
+  left: 16%;
+  width: 750px;
+  height: auto;
+  border-radius: 1rem;
+  padding: 50px 60px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
+
+  animation: slideInLeft;
+  animation-duration: 2s;
+}
+
+.talking-box p {
+  text-align: justify;
+  font-size: 2rem;
+  color: var(--dark-grey);
+  line-height: 4rem;
+  margin-bottom: 2rem;
+}
+
+.emphasize {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.talking-box button {
+  float: right;
+  border: none;
+  border-radius: 5px;
+  background: var(--primary-color);
+  padding: 3px 10px;
+
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.talking-box button:hover {
+  cursor: pointer;
+  background: var(--secondary-color);
+  transition: 0.3s;
+}
+
+/* 對話人物 */
+.person-in-charge {
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  width: 10%;
+
+  animation: slideInUp;
+  animation-duration: 2s;
+}
+
+.person-in-charge div {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+
+  border-radius: 1rem;
+  padding: 5px 20px;
+  background: #fff;
+  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
+
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+}
+
+.person-in-charge img {
+  width: 100%;
+}
+
+/* hint modal */
+.hint-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hint-modal .modal {
+  width: 35%;
+  height: auto;
+  border-radius: 10px;
+  padding: 40px 60px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
+
+  animation: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.hint-modal .modal p {
+  font-size: 2rem;
+  color: var(--dark-grey);
+  line-height: 4rem;
+  margin-bottom: 2rem;
+}
+
+.hint-modal .modal button {
+  float: right;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  padding: 3px 10px;
+  border: 3px solid var(--mid-grey);
+
+  font-size: 2.5rem;
+  color: var(--mid-grey);
+}
+
+.hint-modal .modal button:hover {
+  background: #fffce3;
+  cursor: pointer;
+}
+
+/* 提示人物的動畫不一樣 */
+.hint-guy {
+  animation: fadeIn;
+  animation-duration: 0.5s;
 }

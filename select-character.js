@@ -12,7 +12,7 @@ const view = {
 
   nameForm: document.querySelector("#create-form"),
 
-  alertModal: document.querySelector(".full-modal"),
+  alertModal: document.querySelector(".hint-modal"),
 
   okBtn: document.querySelector(".ok-btn"),
 
