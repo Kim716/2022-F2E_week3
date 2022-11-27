@@ -148,3 +148,8 @@
 .remove {
   display: none;
 }
+
+.productBacklog.static {
+  position: static !important;
+  animation: none;
+}

@@ -1,4 +1,7 @@
 "use strict";
+
+// const Sortable = require("sortablejs");
+
 const GAME_STATE = Object.freeze({
   DescribeGameRule: "DescribeGameRule",
   PlayGame: "PlayGame",
@@ -6,7 +9,21 @@ const GAME_STATE = Object.freeze({
   AnswerCorrect: "AnswerCorrect",
 });
 
-const model = {};
+const model = {
+  userOrder: [],
+
+  correctOrder: ["1", "2", "3", "4"],
+
+  updateUserOrder: function (order) {
+    this.userOrder.length = 0;
+    this.userOrder.push(...order);
+    console.log(this.userOrder);
+  },
+
+  isAnswerCorrect: function () {
+    return this.userOrder.join("") === this.correctOrder.join("");
+  },
+};
 
 const view = {
   descriptionDOM: document.querySelector(".description"),
@@ -17,13 +34,25 @@ const view = {
 
   playView: document.querySelector(".PO-mission"),
 
+  // 設定拖移的兩區
+  dragZoneDOM: document.querySelector(".drag-here"),
+
+  dropZoneDOM: document.querySelector(".drop-here"),
+
   toggleRemove: function (target) {
     target.classList.toggle("remove");
+  },
+
+  removeEmptySpace: function () {
+    if (document.querySelector(".empty-space")) {
+      document.querySelector(".empty-space").remove();
+    }
   },
 };
 
 const controller = {
-  currentState: GAME_STATE.DescribeGameRule,
+  currentState: GAME_STATE.PlayGame,
+  // TODO currentState: GAME_STATE.DescribeGameRule,
 
   dispatchGameAction: function (e) {
     // 會被監聽器呼叫，所以 this 的指向不會是 controller
@@ -39,6 +68,30 @@ const controller = {
     }
   },
 };
+
+const dragZone = Sortable.create(view.dragZoneDOM, {
+  group: "backlogList",
+  animation: 150,
+
+  // 放入dropZone後
+  onEnd: function (e) {
+    console.log(e);
+  },
+});
+
+const dropZone = Sortable.create(view.dropZoneDOM, {
+  group: "backlogList",
+  animation: 150,
+  filter: ".ignore-elements",
+
+  onSort: function (e) {
+    view.removeEmptySpace();
+    e.item.classList.add("static");
+
+    let order = dropZone.toArray();
+    model.updateUserOrder(order);
+  },
+});
 
 // --- EVENT LISTENER --- //
 // EL-1
