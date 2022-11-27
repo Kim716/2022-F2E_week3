@@ -91,6 +91,12 @@
   color: #fff;
 }
 
+.finish-btn:hover {
+  cursor: pointer;
+  background: var(--secondary-color);
+  transition: 0.3s;
+}
+
 /* 可拖移 */
 .drag-here {
   position: absolute;
