@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>開發中_ Sprint ! 菜鳥 !</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./reset.css" />
+  </head>
+  <body>
+    <div class="dev-page background">
+      <div class="hint-modal">
+        <div class="modal">
+          <p>
+            嗨～ <span class="userName"></span>，謝謝你闖關到這邊:)<br />
+            後面的關卡還在開發中，再稍等一下喔！<br />
+          </p>
+          <button class="ok-btn">好的 ▶︎</button>
+        </div>
+        <div class="person-in-charge hint-guy">
+          <div class="name">開發者</div>
+          <img src="image/Property 1=Initial.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <script>
+      const userName = localStorage.getItem("userName");
+
+      const userNameDOM = document.querySelector(".userName");
+
+      userNameDOM.textContent = userName;
+
+      const okBtn = document.querySelector(".ok-btn");
+
+      okBtn.addEventListener("click", (e) => {
+        window.location.assign("./index.html");
+      });
+    </script>
+  </body>
+</html>
