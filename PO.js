@@ -86,7 +86,7 @@ const controller = {
         break;
       // 成功時，可以跳轉下一關
       case GAME_STATE.AnswerCorrect:
-        window.location.assign("./index.html");
+        window.location.assign("./sprint.html");
         break;
       // 失敗時，關閉 modal 繼續遊戲
       case GAME_STATE.AnswerWrong:
