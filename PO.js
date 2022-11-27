@@ -8,6 +8,8 @@ const GAME_STATE = Object.freeze({
 });
 
 const model = {
+  userName: localStorage.getItem("userName"),
+
   userOrder: [],
 
   correctOrder: ["1", "2", "3", "4"],
@@ -33,6 +35,8 @@ const view = {
   playView: document.querySelector(".PO-mission"),
 
   finishBtn: document.querySelector(".finish-btn"),
+
+  userNameDOM: document.querySelector(".userName"),
 
   // --- modal --- //
   failHint: document.querySelector(".fail-hint"),
@@ -133,3 +137,6 @@ view.okBtn.addEventListener("click", controller.dispatchGameAction);
 
 // EL-4
 view.thanksBtn.addEventListener("click", controller.dispatchGameAction);
+
+// Render
+view.userNameDOM.textContent = model.userName;
