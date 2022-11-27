@@ -34,6 +34,17 @@ const view = {
 
   playView: document.querySelector(".PO-mission"),
 
+  finishBtn: document.querySelector(".finish-btn"),
+
+  // --- modal --- //
+  failHint: document.querySelector(".fail-hint"),
+
+  correctHint: document.querySelector(".correct-hint"),
+
+  okBtn: document.querySelector(".ok-btn"),
+
+  thanksBtn: document.querySelector(".thanks-btn"),
+
   // 設定拖移的兩區
   dragZoneDOM: document.querySelector(".drag-here"),
 
@@ -97,8 +108,27 @@ const dropZone = Sortable.create(view.dropZoneDOM, {
 // EL-1
 view.startBtn.addEventListener("click", controller.dispatchGameAction);
 
-// 聽完說明按按鈕跳畫面開始遊戲
-// 拖拉放置、換位置
+// EL-2
+view.finishBtn.addEventListener("click", (e) => {
+  // 答對
+  if (model.isAnswerCorrect()) {
+    view.toggleRemove(view.correctHint);
+    return;
+  }
+  // 答錯
+  view.toggleRemove(view.failHint);
+});
+
+// EL-3 關閉失敗畫面
+view.okBtn.addEventListener("click", (e) => {
+  view.toggleRemove(view.failHint);
+});
+
+// EL-4 成功可以跳轉下一關
+view.thanksBtn.addEventListener("click", (e) => {
+  window.location.assign("./index.html");
+});
+
 // 按下按鈕確認有沒有正確（data-set的數字順序）
 // 有正確就跳出好棒棒提示，按下上面按鈕會跳下一頁
 // 錯誤就跳另一個提示，按下按鈕會關閉提示畫面
