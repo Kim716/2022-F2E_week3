@@ -32,7 +32,7 @@ function changeStage2() {
 
 // --- EVENT LISTENER --- //
 document.querySelector(".start-btn").addEventListener("click", () => {
-  window.location.assign("./select-character.html");
+  window.location.assign("../html/select-character.html");
 });
 
 // --- EXECUTE --- //

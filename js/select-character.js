@@ -65,7 +65,7 @@ view.nameForm.addEventListener("submit", (e) => {
   model.saveThingInLocal("userName", nameInput);
 
   // 跳轉頁面
-  window.location.assign("./PO.html");
+  window.location.assign("../html/PO.html");
 });
 
 // EL-3 modal 的按鈕只有關掉功能

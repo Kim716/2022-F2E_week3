@@ -155,7 +155,7 @@ html {
   width: 100vw;
   height: 100vh;
 
-  background: url("./image/bg-img_工作區域 1_工作區域 1 2.png");
+  background: url("../assets/image/bg-img_工作區域 1_工作區域 1 2.png");
   background-size: cover;
   background-position: center;
 }

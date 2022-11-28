@@ -90,7 +90,7 @@ const controller = {
         break;
       // 成功時，可以跳轉下一關
       case GAME_STATE.AnswerCorrect:
-        window.location.assign("./develop.html");
+        window.location.assign("../html/develop.html");
         break;
       // 失敗時，關閉 modal 繼續遊戲
       case GAME_STATE.AnswerWrong:

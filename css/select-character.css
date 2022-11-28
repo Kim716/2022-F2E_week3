@@ -23,26 +23,26 @@
   width: 40%;
 }
 .character1 {
-  background: url("./image/Property\ 1=Initial.png");
+  background: url("../assets/image/Property\ 1=Initial.png");
   background-size: cover;
   width: 130px;
   height: 220px;
 }
 .character1:hover {
-  background: url("./image/主角1.png");
+  background: url("../assets/image/主角1.png");
   background-size: cover;
   cursor: pointer;
 }
 
 .character2 {
   /* border: 3px solid tomato; */
-  background: url("./image/Property\ 2=Initial.png");
+  background: url("../assets/image/Property\ 2=Initial.png");
   background-size: cover;
   width: 130px;
   height: 240px;
 }
 .character2:hover {
-  background: url("./image/主角2.png");
+  background: url("../assets/image/主角2.png");
   background-size: cover;
   cursor: pointer;
 }
@@ -83,11 +83,11 @@
 }
 
 .show1 {
-  background: url("./image/主角1.png");
+  background: url("../assets/image/主角1.png");
   background-size: cover;
 }
 
 .show2 {
-  background: url("./image/主角2.png");
+  background: url("../assets/image/主角2.png");
   background-size: cover;
 }
