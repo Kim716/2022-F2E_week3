@@ -24,8 +24,13 @@ In desktop(1440 * 800)
 * Google Font
 
 ## About Files
-* image 是用來存放網頁中所使用的圖片
-* test 是用來測試功能的檔案（此處保留純作為學習紀錄）
+* assets
+  * image 是用來存放網頁中所使用的圖片
+  * test 是用來測試功能的檔案（此處保留純作為學習紀錄）
+* css 存放 css 檔案
+* html 存放 html 檔案
+* js 存放 js 檔案
+
 
 ## Features
 - [x] opening
