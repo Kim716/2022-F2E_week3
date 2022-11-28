@@ -1,0 +1,16 @@
+.description-guy-3 {
+  left: 30%;
+}
+
+.description-guy-4 {
+  left: 18%;
+}
+
+.description-guy-4 div {
+  left: -20px;
+  top: 3%;
+}
+
+.remove {
+  display: none;
+}

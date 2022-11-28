@@ -168,7 +168,7 @@ html {
   width: 750px;
   height: auto;
   border-radius: 1rem;
-  padding: 50px 60px;
+  padding: 50px 80px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
 
@@ -222,8 +222,10 @@ html {
   top: -10px;
   right: -20px;
 
-  border-radius: 1rem;
-  padding: 5px 20px;
+  width: 50%;
+  text-align: center;
+  border-radius: 2rem;
+  padding: 7px 0;
   background: #fff;
   box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
 
@@ -270,7 +272,8 @@ html {
   margin-bottom: 2rem;
 }
 
-.hint-modal .modal button {
+.hint-modal .modal button,
+.talking-box .hint-btn {
   float: right;
   border: none;
   border-radius: 5px;
@@ -282,7 +285,8 @@ html {
   color: var(--mid-grey);
 }
 
-.hint-modal .modal button:hover {
+.hint-modal .modal button:hover,
+.talking-box .hint-btn:hover {
   background: #fffce3;
   cursor: pointer;
 }
@@ -291,4 +295,47 @@ html {
 .hint-guy {
   animation: fadeIn;
   animation-duration: 0.5s;
+}
+
+/* 前一頁按鈕*/
+.back-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  border: none;
+  background: transparent;
+
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 900;
+  -webkit-text-stroke: 1px var(--mid-grey);
+}
+
+.back-btn:hover {
+  font-size: 6rem;
+  color: var(--tertiary-color);
+  cursor: pointer;
+}
+
+/* 當兩個對話框出現 */
+.talking-box-top {
+  top: -20%;
+
+  animation: moveTop;
+  animation-duration: 2s;
+}
+
+.talking-box-bottom {
+  top: 25%;
+}
+
+@keyframes moveTop {
+  0% {
+    top: 12%;
+  }
+
+  100% {
+    top: -20%;
+  }
 }
