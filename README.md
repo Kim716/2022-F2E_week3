@@ -2,7 +2,7 @@
 ![](https://github.com/Kim716/2022-F2E_week3/blob/main/image/cover.png?raw=true)
 
 ### 🎨Designer：[小菜](https://2022.thef2e.com/users/12061549261446456235)
-### 💻Demo：[click here](https://kim716.github.io/2022-F2E_week3/)
+### 💻Demo：[click here](https://kim716.github.io/2022-F2E_week3/html/index.html)
 ---
 
 ## Introdution
