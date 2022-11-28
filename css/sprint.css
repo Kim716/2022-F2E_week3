@@ -78,18 +78,24 @@
   margin: 2rem auto;
 }
 
-.drop-here,
+.drop-here-background,
 .drag-here {
+  position: relative;
   width: 90%;
   height: 50%;
   margin: 0 auto;
+}
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.drop-here {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .productBacklog {
+  margin-bottom: 1rem;
   border: 1px solid var(--dark-grey);
   background: #d7ffae;
   width: 100%;
@@ -124,6 +130,7 @@
 }
 
 .empty-space {
+  margin-bottom: 1rem;
   border: 2px dashed var(--mid-grey);
   height: 21%;
 }

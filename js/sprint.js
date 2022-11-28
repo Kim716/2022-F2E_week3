@@ -32,11 +32,15 @@ const view = {
 
   description5: document.querySelector(".description-5"),
 
+  playView: document.querySelector(".Sprint-mission"),
+
   continueBtns: document.querySelectorAll(".continue-btn"),
 
   totalPointsDOM: document.querySelector(".total-points"),
 
   dragZoneDOM: document.querySelector(".drag-here"),
+
+  dropZoneDOM: document.querySelector(".drop-here"),
 
   toggleRemove: function (target) {
     target.classList.toggle("remove");
@@ -55,13 +59,20 @@ const view = {
     return rawHTML;
   },
 
+  generateEmptySpaceHTML: function () {
+    const rawHTML = `<div class="empty-space ignore-elements"></div>`;
+
+    return rawHTML;
+  },
+
   renderZone: function (zone) {
     zone.innerHTML = this.generateBacklogHTML();
   },
 };
 
 const controller = {
-  currentState: GAME_STATE.DescribeGameRule1,
+  currentState: GAME_STATE.PlayGame,
+  // currentState: GAME_STATE.DescribeGameRule1,
 
   dispatchGameAction: function (e) {
     switch (controller.currentState) {
@@ -95,7 +106,11 @@ const controller = {
         controller.currentState = GAME_STATE.DescribeGameRule5;
         break;
       case GAME_STATE.DescribeGameRule5:
-        controller.currentState = GAME_STATE.AnswerCorrect;
+        // 進入遊戲畫面
+        view.toggleRemove(view.description5);
+        view.toggleRemove(view.playView);
+
+        controller.currentState = GAME_STATE.PlayGame;
         break;
       // 遊玩階段
       case GAME_STATE.PlayGame:
@@ -103,6 +118,30 @@ const controller = {
     }
   },
 };
+
+const dragZone = Sortable.create(view.dragZoneDOM, {
+  group: "backlogList",
+  animation: 150,
+
+  onAdd(e) {},
+  // TODO 刪除PO.js的放入dropZone後
+});
+
+const dropZone = Sortable.create(view.dropZoneDOM, {
+  group: "backlogList",
+  animation: 150,
+  dataIdAttr: "data-points",
+
+  onEnd(e) {
+    let order = dropZone.toArray();
+    console.log(order);
+  },
+
+  onAdd: function (e) {
+    let order = dropZone.toArray();
+    console.log(order);
+  },
+});
 
 // --- EVENT LISTENER --- //
 // EL-1 綁定所有continue-btn
