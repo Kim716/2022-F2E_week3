@@ -98,7 +98,7 @@
       <button class="back-btn back-btn-4 remove">↩︎</button>
 
       <!-- 說明畫面-5 含上一頁按鈕-->
-      <div class="talking-box description-5">
+      <div class="talking-box description-5 remove">
         <p>
           沒錯，如同小斯說的，我這邊已經把剛剛討論好的點數標上去囉～
           你來練習<span class="emphasize">把任務排到短衝待辦清單吧！</span
@@ -110,14 +110,61 @@
         <button class="start-btn">開始試煉 ▶︎</button>
       </div>
 
-      <div class="person-in-charge description-guy-5">
+      <div class="person-in-charge description-guy-5 remove">
         <div class="name">小廣</div>
         <img src="../assets/image/green 職員.png" alt="" />
       </div>
 
-      <button class="back-btn back-btn-5">↩︎</button>
+      <button class="back-btn back-btn-5 remove">↩︎</button>
 
-      <!-- 遊戲畫面 Render -->
+      <!-- 遊戲畫面 -->
+      <div class="Sprint-mission">
+        <div class="mission talking-box">
+          <p>請將產品待辦清單中的項目拖曳到短衝清單。 (20點內)</p>
+        </div>
+
+        <div class="game-panel">
+          <h3>產品待辦清單 ProductBacklog</h3>
+          <p>優先度高 ↑</p>
+          <div class="drag-here">
+            <!-- render -->
+            <div class="productBacklog" data-points="1">
+              <p>會員系統（登入、註冊、管理)</p>
+              <div class="point-avatar">1</div>
+            </div>
+
+            <div class="productBacklog" data-points="1">
+              <p>會員系統（登入、註冊、管理)</p>
+              <div class="point-avatar">1</div>
+            </div>
+
+            <div class="productBacklog" data-points="1">
+              <p>會員系統（登入、註冊、管理)</p>
+              <div class="point-avatar">1</div>
+            </div>
+
+            <div class="productBacklog" data-points="1">
+              <p>會員系統（登入、註冊、管理)</p>
+              <div class="point-avatar">1</div>
+            </div>
+          </div>
+          <p>優先度低 ↓</p>
+        </div>
+
+        <div class="game-panel game-panel-2">
+          <h3>開發 A 組的短衝辦清單</h3>
+          <p><span class="points">0</span>/20點</p>
+
+          <div class="drop-here">
+            <div class="empty-space ignore-elements"></div>
+            <div class="empty-space ignore-elements"></div>
+            <div class="empty-space ignore-elements"></div>
+            <div class="empty-space ignore-elements"></div>
+          </div>
+
+          <button class="finish-btn">準備好了，開始 Sprint</button>
+        </div>
+      </div>
 
       <!-- 失敗提示 -->
       <div class="hint-modal fail-hint remove">
