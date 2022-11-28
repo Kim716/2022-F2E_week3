@@ -68,7 +68,6 @@ const controller = {
       // 說明階段
       case GAME_STATE.DescribeGameRule1:
         // 顯示第二段說明
-        console.log("show2");
         view.toggleRemove(view.description1);
         view.toggleRemove(view.description2);
 
@@ -76,7 +75,6 @@ const controller = {
         break;
       case GAME_STATE.DescribeGameRule2:
         // 顯示第三段說明
-        console.log("show3");
         view.toggleRemove(view.description2);
         view.toggleRemove(view.description3);
 
@@ -84,15 +82,13 @@ const controller = {
         break;
       case GAME_STATE.DescribeGameRule3:
         // 顯示第四段說明
-        console.log("show4");
         view.toggleRemove(view.description3);
         view.toggleRemove(view.description4);
 
         controller.currentState = GAME_STATE.DescribeGameRule4;
         break;
       case GAME_STATE.DescribeGameRule4:
-        // 顯示第四段說明
-        console.log("show5");
+        // 顯示第五段說明
         view.toggleRemove(view.description4);
         view.toggleRemove(view.description5);
 
