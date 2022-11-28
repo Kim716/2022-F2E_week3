@@ -15,34 +15,44 @@
   <body>
     <div class="Sprint-page background">
       <!-- 說明畫面-1 -->
-      <div class="talking-box description-1 remove">
-        <p>
-          產品待辦清單好了之後，我們來召集 Scrum Master 和開發團隊共同召開<span
-            class="emphasize"
-            >短衝規劃會議（Sprint Planning）</span
-          >。<br /><br />
-          短衝即是一個迭代，具有固定時間限制，我們會在這個會議中，決定要完成哪些工作事項來達到商業需求，<span
-            class="emphasize"
-            >列出短衝待辦清單（Sprint Backlog）</span
-          >，並由開發團隊在接下來的產品開發週期裡執行。
-        </p>
-        <button class="hint-btn continue-btn-1">繼續 ▶︎</button>
-      </div>
-      <div class="person-in-charge description-guy-1 remove">
-        <div class="name">小敏</div>
-        <img src="../assets/image/pink 職員.png" alt="" />
+      <div class="description-1">
+        <div class="talking-box description-1">
+          <p>
+            產品待辦清單好了之後，我們來召集 Scrum Master
+            和開發團隊共同召開<span class="emphasize"
+              >短衝規劃會議（Sprint Planning）</span
+            >。<br /><br />
+            短衝即是一個迭代，具有固定時間限制，我們會在這個會議中，決定要完成哪些工作事項來達到商業需求，<span
+              class="emphasize"
+              >列出短衝待辦清單（Sprint Backlog）</span
+            >，並由開發團隊在接下來的產品開發週期裡執行。
+          </p>
+          <!--  TODO  可能可以把有數字的class拿掉-->
+          <button class="hint-btn continue-btn continue-btn-1">繼續 ▶︎</button>
+        </div>
+        <div class="person-in-charge description-guy-1">
+          <div class="name">小敏</div>
+          <img src="../assets/image/pink 職員.png" alt="" />
+        </div>
       </div>
 
       <!-- 說明畫面-2 含上一頁按鈕-->
-      <div class="talking-box description-2 remove">
-        <p>
-          嗨嗨！你是新來的前端吧！ <br />我是這次的 Scrum Master 小捷，<br />我的工作主要是促成開發團隊成員協作、引導團隊進行自省會議，提升團隊成員對
-          Scrum 瞭解。
-        </p>
-        <button class="hint-btn continue-btn-2">繼續 ▶︎</button>
-      </div>
+      <div class="description-2 remove">
+        <div class="talking-box">
+          <p>
+            嗨嗨！你是新來的前端吧！ <br />我是這次的 Scrum Master 小捷，<br />我的工作主要是促成開發團隊成員協作、引導團隊進行自省會議，提升團隊成員對
+            Scrum 瞭解。
+          </p>
+          <button class="hint-btn continue-btn continue-btn-2">繼續 ▶︎</button>
+        </div>
 
-      <button class="back-btn back-btn-2 remove">↩︎</button>
+        <div class="person-in-charge description-guy-2">
+          <div class="name">小捷</div>
+          <img src="../assets/image/brown 職員.png" alt="" />
+        </div>
+
+        <button class="back-btn back-btn-2">↩︎</button>
+      </div>
 
       <!-- 說明畫面-3 含上一頁按鈕 +2 人-->
       <div class="talking-box talking-box-top description-3-1 remove">
@@ -62,7 +72,7 @@
       </div>
 
       <!-- !!! 從 description-2 就要出現-->
-      <div class="person-in-charge description-guy-23 remove">
+      <div class="person-in-charge description-guy-3 remove">
         <div class="name">小捷</div>
         <img src="../assets/image/brown 職員.png" alt="" />
       </div>
@@ -118,7 +128,7 @@
       <button class="back-btn back-btn-5 remove">↩︎</button>
 
       <!-- 遊戲畫面 -->
-      <div class="Sprint-mission">
+      <div class="Sprint-mission remove">
         <div class="mission talking-box">
           <p>請將產品待辦清單中的項目拖曳到短衝清單。 (20點內)</p>
         </div>

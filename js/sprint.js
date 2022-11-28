@@ -1,6 +1,10 @@
 "use strict";
 const GAME_STATE = Object.freeze({
-  DescribeGameRule: "DescribeGameRule",
+  DescribeGameRule1: "DescribeGameRule1",
+  DescribeGameRule2: "DescribeGameRule2",
+  DescribeGameRule3: "DescribeGameRule3",
+  DescribeGameRule4: "DescribeGameRule4",
+  DescribeGameRule5: "DescribeGameRule5",
   PlayGame: "PlayGame",
   AnswerWrong: "AnswerWrong",
   AnswerCorrect: "AnswerCorrect",
@@ -18,9 +22,19 @@ const model = {
 };
 
 const view = {
+  description1: document.querySelector(".description-1"),
+
+  description2: document.querySelector(".description-2"),
+
+  continueBtns: document.querySelectorAll(".continue-btn"),
+
   totalPointsDOM: document.querySelector(".total-points"),
 
   dragZoneDOM: document.querySelector(".drag-here"),
+
+  toggleRemove: function (target) {
+    target.classList.toggle("remove");
+  },
 
   generateBacklogHTML: function () {
     let rawHTML = "";
@@ -36,26 +50,46 @@ const view = {
   },
 
   renderZone: function (zone) {
-    console.log(1);
     zone.innerHTML = this.generateBacklogHTML();
   },
 };
 
 const controller = {
-  currentState: GAME_STATE.PlayGame,
+  currentState: GAME_STATE.DescribeGameRule1,
 
   dispatchGameAction: function (e) {
     switch (controller.currentState) {
       // 說明階段
-      case GAME_STATE.DescribeGameRule:
-        controller.currentState = GAME_STATE.AnswerCorrect;
-        // 轉換遊戲畫面 render
+      case GAME_STATE.DescribeGameRule1:
+        // 顯示第二段說明
+        view.toggleRemove(view.description1);
+        view.toggleRemove(view.description2);
 
+        controller.currentState = GAME_STATE.DescribeGameRule2;
         break;
+      case GAME_STATE.DescribeGameRule2:
+        controller.currentState = GAME_STATE.DescribeGameRule3;
+        break;
+      case GAME_STATE.DescribeGameRule3:
+        controller.currentState = GAME_STATE.DescribeGameRule4;
+        break;
+      case GAME_STATE.DescribeGameRule4:
+        controller.currentState = GAME_STATE.DescribeGameRule5;
+        break;
+      case GAME_STATE.DescribeGameRule5:
+        controller.currentState = GAME_STATE.AnswerCorrect;
+        break;
+      // 遊玩階段
       case GAME_STATE.PlayGame:
         break;
     }
   },
 };
+
+// --- EVENT LISTENER --- //
+// EL-1 綁定所有continue-btn
+view.continueBtns.forEach((btn) => {
+  btn.addEventListener("click", controller.dispatchGameAction);
+});
 
 view.renderZone(view.dragZoneDOM);
