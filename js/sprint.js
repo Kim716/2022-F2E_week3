@@ -18,7 +18,26 @@ const model = {
     { content: "後台職缺管理功能（資訊上架、下架、顯示應徵者資料）", score: 8 },
   ],
 
-  totalPoints: [],
+  sprintPoints: [],
+
+  totalPoints: 0,
+
+  getSprintPoints: function () {
+    const points = dropZone.toArray();
+    const numberPoints = points.map((point) => parseInt(point, 10));
+    return numberPoints;
+  },
+
+  updateModelSprintPoints: function () {
+    model.sprintPoints = [];
+    model.sprintPoints.push(...model.getSprintPoints());
+  },
+
+  updateModelTotalPoints: function () {
+    model.totalPoints = 0;
+    model.sprintPoints.forEach((point) => (model.totalPoints += point));
+    console.log(model.totalPoints);
+  },
 };
 
 const view = {
@@ -114,6 +133,11 @@ const controller = {
         break;
       // 遊玩階段
       case GAME_STATE.PlayGame:
+        // 加總分數
+        model.updateModelTotalPoints();
+
+        // 畫面分數改動
+        // 判斷
         break;
     }
   },
@@ -133,13 +157,11 @@ const dropZone = Sortable.create(view.dropZoneDOM, {
   dataIdAttr: "data-points",
 
   onEnd(e) {
-    let order = dropZone.toArray();
-    console.log(order);
+    model.updateModelSprintPoints();
   },
 
   onAdd: function (e) {
-    let order = dropZone.toArray();
-    console.log(order);
+    model.updateModelSprintPoints();
   },
 });
 

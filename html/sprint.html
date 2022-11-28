@@ -160,14 +160,28 @@
             <div class="drop-here"></div>
           </div>
 
-          <button class="finish-btn">準備好了，開始 Sprint</button>
+          <button class="finish-btn continue-btn">準備好了，開始 Sprint</button>
         </div>
       </div>
 
-      <!-- 失敗提示 -->
-      <div class="hint-modal fail-hint remove">
+      <!-- 太少失敗提示 -->
+      <div class="hint-modal too-less-hint remove">
         <div class="modal">
-          <p>請再試試看，我相信你可以的！</p>
+          <p>開發 A 組有能力做得更多，<br />請再試試看，我相信你可以的！</p>
+          <button class="ok-btn">好的 ▶︎</button>
+        </div>
+        <div class="person-in-charge hint-guy">
+          <div class="name">小捷</div>
+          <img src="../assets/image/brown 職員.png" alt="" />
+        </div>
+      </div>
+
+      <!-- 太多失敗提示 -->
+      <div class="hint-modal too-much-hint remove">
+        <div class="modal">
+          <p>
+            好像太多了，開發 A 組會忙不過來的。<br />請再試試看，我相信你可以的！
+          </p>
           <button class="ok-btn">好的 ▶︎</button>
         </div>
         <div class="person-in-charge hint-guy">
