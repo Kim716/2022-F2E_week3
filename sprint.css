@@ -1,14 +1,23 @@
-.description-guy-3 {
+/* description-3 */
+.description-guy-3-1 {
   left: 30%;
 }
 
-.description-guy-4 {
+.description-guy-3-2 {
   left: 18%;
 }
 
-.description-guy-4 div {
+.description-guy-3-2 div {
   left: -20px;
   top: 3%;
+}
+
+/* description-5 */
+.description-5 p img {
+  display: inline;
+  height: 3rem;
+  vertical-align: text-bottom;
+  margin: 0 7px 0 2px;
 }
 
 .remove {
