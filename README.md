@@ -1,8 +1,8 @@
 # Learn Scrum by Playing Game
-![](https://github.com/Kim716/2022-F2E_week3/blob/main/image/cover.png?raw=true)
+![](https://github.com/Kim716/2022-F2E_week3/blob/main/assets/image/cover.png?raw=true)
 
 ### 🎨Designer：[小菜](https://2022.thef2e.com/users/12061549261446456235)
-### 💻Demo：[click here](https://kim716.github.io/2022-F2E_week3/)
+### 💻Demo：[click here](https://kim716.github.io/2022-F2E_week3/html/index.html)
 ---
 
 ## Introdution
@@ -24,8 +24,13 @@ In desktop(1440 * 800)
 * Google Font
 
 ## About Files
-* image 是用來存放網頁中所使用的圖片
-* test 是用來測試功能的檔案（此處保留純作為學習紀錄）
+* assets
+  * image 是用來存放網頁中所使用的圖片
+  * test 是用來測試功能的檔案（此處保留純作為學習紀錄）
+* css 存放 css 檔案
+* html 存放 html 檔案
+* js 存放 js 檔案
+
 
 ## Features
 - [x] opening
