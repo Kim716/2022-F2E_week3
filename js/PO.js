@@ -30,11 +30,10 @@ const view = {
 
   personInChargeDOM: document.querySelector(".description-guy"),
 
-  startBtn: document.querySelector(".start-btn"),
+  // start, finish, ok, thanks btn 都是用做「continue」
+  continueBtns: document.querySelectorAll(".continue-btn"),
 
   playView: document.querySelector(".PO-mission"),
-
-  finishBtn: document.querySelector(".finish-btn"),
 
   userNameDOM: document.querySelector(".userName"),
 
@@ -42,10 +41,6 @@ const view = {
   failHint: document.querySelector(".fail-hint"),
 
   correctHint: document.querySelector(".correct-hint"),
-
-  okBtn: document.querySelector(".ok-btn"),
-
-  thanksBtn: document.querySelector(".thanks-btn"),
 
   // --- 設定拖移的兩區 --- //
   dragZoneDOM: document.querySelector(".drag-here"),
@@ -66,7 +61,7 @@ const view = {
 const controller = {
   currentState: GAME_STATE.DescribeGameRule,
 
-  dispatchGameAction: function (e) {
+  dispatchContinueBtn: function (e) {
     // 會被監聽器呼叫，所以 this 的指向不會是 controller
     switch (controller.currentState) {
       // 說明階段
@@ -90,7 +85,7 @@ const controller = {
         break;
       // 成功時，可以跳轉下一關
       case GAME_STATE.AnswerCorrect:
-        window.location.assign("../html/develop.html");
+        window.location.assign("../html/sprint.html");
         break;
       // 失敗時，關閉 modal 繼續遊戲
       case GAME_STATE.AnswerWrong:
@@ -121,17 +116,10 @@ const dropZone = Sortable.create(view.dropZoneDOM, {
 });
 
 // --- EVENT LISTENER --- //
-// EL-1
-view.startBtn.addEventListener("click", controller.dispatchContinueBtn);
-
-// EL-2
-view.finishBtn.addEventListener("click", controller.dispatchContinueBtn);
-
-// EL-3
-view.okBtn.addEventListener("click", controller.dispatchContinueBtn);
-
-// EL-4
-view.thanksBtn.addEventListener("click", controller.dispatchContinueBtn);
+// EL-1 監聽所有 continue-btn，使用controller去控制行為
+view.continueBtns.forEach((btn) => {
+  btn.addEventListener("click", controller.dispatchContinueBtn);
+});
 
 // Render
 view.userNameDOM.textContent = model.userName;
