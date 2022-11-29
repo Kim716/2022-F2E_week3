@@ -12,15 +12,19 @@ const GAME_STATE = Object.freeze({
 
 const model = {
   backlogArr: [
-    { content: "前台職缺列表（職缺詳細內容、點選可發送應徵意願）", score: 5 },
+    { content: "前台職缺列表（職缺詳細內容、點選可發送應徵意願）", score: 4 },
     { content: "應徵者的線上履歷編輯器", score: 13 },
-    { content: "會員系統（登入、註冊、權限管理）", score: 8 },
-    { content: "後台職缺管理功能（資訊上架、下架、顯示應徵者資料）", score: 8 },
+    { content: "會員系統（登入、註冊、權限管理）", score: 7 },
+    { content: "後台職缺管理功能（資訊上架、下架、顯示應徵者資料）", score: 7 },
   ],
 
   sprintPoints: [],
 
   totalPoints: 0,
+
+  minPoints: 13,
+
+  maxPoints: 20,
 
   getSprintPoints: function () {
     const points = dropZone.toArray();
@@ -60,6 +64,13 @@ const view = {
   dragZoneDOM: document.querySelector(".drag-here"),
 
   dropZoneDOM: document.querySelector(".drop-here"),
+
+  // 遊戲結果 modal
+  tooLessHint: document.querySelector(".too-less-hint"),
+
+  tooMuchHint: document.querySelector(".too-much-hint"),
+
+  correctHint: document.querySelector(".correct-hint"),
 
   toggleRemove: function (target) {
     target.classList.toggle("remove");
@@ -133,11 +144,36 @@ const controller = {
         break;
       // 遊玩階段
       case GAME_STATE.PlayGame:
-        // 加總分數
-        model.updateModelTotalPoints();
-
-        // 畫面分數改動
         // 判斷
+        if (model.totalPoints > model.maxPoints) {
+          // 太多 modal
+          view.toggleRemove(view.tooMuchHint);
+          controller.currentState = GAME_STATE.AnswerWrong;
+          return;
+        } else if (model.totalPoints <= model.minPoints) {
+          // 太少 modal
+          view.toggleRemove(view.tooLessHint);
+          controller.currentState = GAME_STATE.AnswerWrong;
+          return;
+        }
+        //過關 modal
+        view.toggleRemove(view.correctHint);
+        controller.currentState = GAME_STATE.AnswerCorrect;
+        break;
+      // 答錯，關閉 modal 才能繼續
+      case GAME_STATE.AnswerWrong:
+        controller.currentState = GAME_STATE.PlayGame;
+
+        if (e.target.matches(".add-more")) {
+          view.toggleRemove(view.tooLessHint);
+          return;
+        }
+
+        view.toggleRemove(view.tooMuchHint);
+        break;
+      // 答對，跳轉下一關
+      case GAME_STATE.AnswerCorrect:
+        window.location.assign("../html/develop.html");
         break;
     }
   },
@@ -158,10 +194,14 @@ const dropZone = Sortable.create(view.dropZoneDOM, {
 
   onEnd(e) {
     model.updateModelSprintPoints();
+    model.updateModelTotalPoints();
+    view.totalPointsDOM.textContent = model.totalPoints;
   },
 
   onAdd: function (e) {
     model.updateModelSprintPoints();
+    model.updateModelTotalPoints();
+    view.totalPointsDOM.textContent = model.totalPoints;
   },
 });
 
