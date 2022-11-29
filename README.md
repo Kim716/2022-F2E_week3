@@ -12,6 +12,9 @@ _2022 The F2E 4th 第三關「Scrum 新手村」的作品_
 
 謝謝 小菜 設計師的設計稿！十分喜歡創建人物領取獎狀的巧思！
 
+_🎉 New Update_
+
+-- 2022.11.29 開放「Sprint 關卡」畫面及功能
 
 ## Get best experience 
 In desktop(1440 * 800)
@@ -38,8 +41,8 @@ In desktop(1440 * 800)
 - [x] describe PO 
 - [x] play PO mission
 - [x] page that tells project is still in development
-- [ ] describe sptint backlog
-- [ ] play sptint backlog mission
+- [x] describe sptint backlog
+- [x] play sptint backlog mission
 - [ ] describe scrum
 - [ ] play scrum mission
 - [ ] describe retro
