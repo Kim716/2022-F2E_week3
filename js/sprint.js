@@ -59,6 +59,8 @@ const view = {
 
   continueBtns: document.querySelectorAll(".continue-btn"),
 
+  backBtns: document.querySelectorAll(".back-btn"),
+
   totalPointsDOM: document.querySelector(".total-points"),
 
   dragZoneDOM: document.querySelector(".drag-here"),
@@ -108,7 +110,6 @@ const view = {
 
 const controller = {
   currentState: GAME_STATE.DescribeGameRule1,
-  // currentState: GAME_STATE.DescribeGameRule1,
 
   dispatchContinueBtn: function (e) {
     switch (controller.currentState) {
@@ -183,6 +184,40 @@ const controller = {
         break;
     }
   },
+
+  // --- 狀態、畫面跳回前一頁 --- //
+  dispatchBackBtn: function (e) {
+    switch (controller.currentState) {
+      case GAME_STATE.DescribeGameRule2:
+        // 跳回第一頁
+        view.toggleRemove(view.description2);
+        view.toggleRemove(view.description1);
+
+        controller.currentState = GAME_STATE.DescribeGameRule1;
+        break;
+      case GAME_STATE.DescribeGameRule3:
+        // 跳回第2頁
+        view.toggleRemove(view.description3);
+        view.toggleRemove(view.description2);
+
+        controller.currentState = GAME_STATE.DescribeGameRule2;
+        break;
+      case GAME_STATE.DescribeGameRule4:
+        // 跳回第3頁
+        view.toggleRemove(view.description4);
+        view.toggleRemove(view.description3);
+
+        controller.currentState = GAME_STATE.DescribeGameRule3;
+        break;
+      case GAME_STATE.DescribeGameRule5:
+        // 跳回第4頁
+        view.toggleRemove(view.description5);
+        view.toggleRemove(view.description4);
+
+        controller.currentState = GAME_STATE.DescribeGameRule4;
+        break;
+    }
+  },
 };
 
 const dragZone = Sortable.create(view.dragZoneDOM, {
@@ -208,6 +243,11 @@ const dropZone = Sortable.create(view.dropZoneDOM, {
 // EL-1 綁定所有continue-btn
 view.continueBtns.forEach((btn) => {
   btn.addEventListener("click", controller.dispatchContinueBtn);
+});
+
+// EL-2 綁定所有back-btn
+view.backBtns.forEach((btn) => {
+  btn.addEventListener("click", controller.dispatchBackBtn);
 });
 
 view.renderZone(view.dragZoneDOM);
