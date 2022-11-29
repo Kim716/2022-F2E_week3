@@ -104,11 +104,6 @@ const controller = {
 const dragZone = Sortable.create(view.dragZoneDOM, {
   group: "backlogList",
   animation: 150,
-
-  // 放入dropZone後
-  onEnd: function (e) {
-    console.log(e);
-  },
 });
 
 const dropZone = Sortable.create(view.dropZoneDOM, {
@@ -127,16 +122,16 @@ const dropZone = Sortable.create(view.dropZoneDOM, {
 
 // --- EVENT LISTENER --- //
 // EL-1
-view.startBtn.addEventListener("click", controller.dispatchGameAction);
+view.startBtn.addEventListener("click", controller.dispatchContinueBtn);
 
 // EL-2
-view.finishBtn.addEventListener("click", controller.dispatchGameAction);
+view.finishBtn.addEventListener("click", controller.dispatchContinueBtn);
 
 // EL-3
-view.okBtn.addEventListener("click", controller.dispatchGameAction);
+view.okBtn.addEventListener("click", controller.dispatchContinueBtn);
 
 // EL-4
-view.thanksBtn.addEventListener("click", controller.dispatchGameAction);
+view.thanksBtn.addEventListener("click", controller.dispatchContinueBtn);
 
 // Render
 view.userNameDOM.textContent = model.userName;

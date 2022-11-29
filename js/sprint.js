@@ -98,15 +98,21 @@ const view = {
   renderZone: function (zone) {
     zone.innerHTML = this.generateBacklogHTML();
   },
+
+  renderTotalPoints: function () {
+    model.updateModelSprintPoints();
+    model.updateModelTotalPoints();
+    view.totalPointsDOM.textContent = model.totalPoints;
+  },
 };
 
 const controller = {
-  currentState: GAME_STATE.PlayGame,
+  currentState: GAME_STATE.DescribeGameRule1,
   // currentState: GAME_STATE.DescribeGameRule1,
 
-  dispatchGameAction: function (e) {
+  dispatchContinueBtn: function (e) {
     switch (controller.currentState) {
-      // 說明階段
+      // --- 說明階段 --- //
       case GAME_STATE.DescribeGameRule1:
         // 顯示第二段說明
         view.toggleRemove(view.description1);
@@ -142,25 +148,25 @@ const controller = {
 
         controller.currentState = GAME_STATE.PlayGame;
         break;
-      // 遊玩階段
+      // --- 遊玩階段 --- //
       case GAME_STATE.PlayGame:
-        // 判斷
+        // 判斷，先統一進入錯誤階段，如果正確最後會改
+        controller.currentState = GAME_STATE.AnswerWrong;
+
         if (model.totalPoints > model.maxPoints) {
           // 太多 modal
           view.toggleRemove(view.tooMuchHint);
-          controller.currentState = GAME_STATE.AnswerWrong;
           return;
         } else if (model.totalPoints <= model.minPoints) {
           // 太少 modal
           view.toggleRemove(view.tooLessHint);
-          controller.currentState = GAME_STATE.AnswerWrong;
           return;
         }
         //過關 modal
         view.toggleRemove(view.correctHint);
         controller.currentState = GAME_STATE.AnswerCorrect;
         break;
-      // 答錯，關閉 modal 才能繼續
+      //  --- 答錯，關閉 modal 才能繼續 --- //
       case GAME_STATE.AnswerWrong:
         controller.currentState = GAME_STATE.PlayGame;
 
@@ -171,7 +177,7 @@ const controller = {
 
         view.toggleRemove(view.tooMuchHint);
         break;
-      // 答對，跳轉下一關
+      // --- 答對，跳轉下一關 --- //
       case GAME_STATE.AnswerCorrect:
         window.location.assign("../html/develop.html");
         break;
@@ -182,9 +188,6 @@ const controller = {
 const dragZone = Sortable.create(view.dragZoneDOM, {
   group: "backlogList",
   animation: 150,
-
-  onAdd(e) {},
-  // TODO 刪除PO.js的放入dropZone後
 });
 
 const dropZone = Sortable.create(view.dropZoneDOM, {
@@ -193,22 +196,18 @@ const dropZone = Sortable.create(view.dropZoneDOM, {
   dataIdAttr: "data-points",
 
   onEnd(e) {
-    model.updateModelSprintPoints();
-    model.updateModelTotalPoints();
-    view.totalPointsDOM.textContent = model.totalPoints;
+    view.renderTotalPoints();
   },
 
   onAdd: function (e) {
-    model.updateModelSprintPoints();
-    model.updateModelTotalPoints();
-    view.totalPointsDOM.textContent = model.totalPoints;
+    view.renderTotalPoints();
   },
 });
 
 // --- EVENT LISTENER --- //
 // EL-1 綁定所有continue-btn
 view.continueBtns.forEach((btn) => {
-  btn.addEventListener("click", controller.dispatchGameAction);
+  btn.addEventListener("click", controller.dispatchContinueBtn);
 });
 
 view.renderZone(view.dragZoneDOM);

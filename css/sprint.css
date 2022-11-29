@@ -16,6 +16,15 @@
   top: 3%;
 }
 
+/* 人物退場 */
+.description-2 .description-guy-1,
+.description-4 .description-guy-3,
+.description-5 .description-guy-4 {
+  opacity: 0;
+  animation: fadeOutRight;
+  animation-duration: 0.5s;
+}
+
 /* description-5 */
 .description-5-css p img {
   display: inline;
