@@ -75,26 +75,7 @@
 }
 
 /* 遊戲畫面 */
-/*TODO 重構！*/
-.mission {
-  top: 5%;
-  left: 10%;
 
-  width: 80%;
-  padding: 30px 60px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  animation: slideInDown;
-  animation-duration: 1s;
-}
-/*TODO 重構！*/
-.mission p {
-  line-height: 3rem;
-  margin-bottom: 0;
-}
 /*TODO 重構！*/
 .game-panel {
   position: absolute;
