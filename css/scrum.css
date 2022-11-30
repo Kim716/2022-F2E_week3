@@ -1,0 +1,24 @@
+.description-2 .talking-box-top {
+  top: -8%;
+  /* bottom: 90%; */
+}
+
+/* 從第二個說明開始人物都同一個，不用動*/
+.description-guy-2 {
+  animation: none;
+}
+
+.remove {
+  display: none;
+}
+
+@keyframes moveTop {
+  0% {
+    top: 12%;
+  }
+
+  100% {
+    top: -8%;
+    /* bottom: 90%; */
+  }
+}
