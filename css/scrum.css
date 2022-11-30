@@ -3,6 +3,17 @@
   /* bottom: 90%; */
 }
 
+@keyframes moveTop {
+  0% {
+    top: 12%;
+  }
+
+  100% {
+    top: -8%;
+    /* bottom: 90%; */
+  }
+}
+
 /* 從第二個說明開始人物都同一個，不用動*/
 .description-guy-2 {
   animation: none;
@@ -15,39 +26,6 @@
   animation-duration: 2s;
 }
 
-.description-4 .talking-box-top {
-  top: -44%;
-
-  animation: moveTop-4;
-  animation-duration: 2s;
-}
-
-.description-5 .talking-box-top {
-  top: -35%;
-
-  animation: moveTop-5;
-  animation-duration: 2s;
-}
-
-.description-5 .talking-box-bottom {
-  top: 10%;
-}
-
-.remove {
-  display: none;
-}
-
-@keyframes moveTop {
-  0% {
-    top: 12%;
-  }
-
-  100% {
-    top: -8%;
-    /* bottom: 90%; */
-  }
-}
-
 @keyframes moveTop-3 {
   0% {
     top: 12%;
@@ -56,6 +34,13 @@
   100% {
     top: -38%;
   }
+}
+
+.description-4 .talking-box-top {
+  top: -44%;
+
+  animation: moveTop-4;
+  animation-duration: 2s;
 }
 
 @keyframes moveTop-4 {
@@ -68,6 +53,13 @@
   }
 }
 
+.description-5 .talking-box-top {
+  top: -35%;
+
+  animation: moveTop-5;
+  animation-duration: 2s;
+}
+
 @keyframes moveTop-5 {
   0% {
     top: 12%;
@@ -76,4 +68,76 @@
   100% {
     top: -35%;
   }
+}
+
+.description-5 .talking-box-bottom {
+  top: 10%;
+}
+
+/* 遊戲畫面 */
+/*TODO 重構！*/
+.mission {
+  top: 5%;
+  left: 10%;
+
+  width: 80%;
+  padding: 30px 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: slideInDown;
+  animation-duration: 1s;
+}
+/*TODO 重構！*/
+.mission p {
+  line-height: 3rem;
+  margin-bottom: 0;
+}
+/*TODO 重構！*/
+.game-panel {
+  position: absolute;
+  bottom: -3%;
+  left: 12%; /*這裡比較不一樣*/
+
+  height: 80%;
+  width: 76%; /*這裡比較不一樣*/
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
+  text-align: center;
+
+  animation: fadeIn;
+  animation-duration: 1s;
+}
+/*TODO 重構！*/
+.game-panel h3 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--dark-grey);
+  margin: 3rem 0;
+}
+
+/*TODO 重構！*/
+.finish-btn {
+  border: none;
+  border-radius: 1rem;
+  background: var(--primary-color);
+  padding: 7px 150px;
+  margin-top: 1rem;
+
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+}
+/*TODO 重構！*/
+.finish-btn:hover {
+  cursor: pointer;
+  background: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.remove {
+  display: none;
 }
