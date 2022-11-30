@@ -15,6 +15,24 @@
   animation-duration: 2s;
 }
 
+.description-4 .talking-box-top {
+  top: -44%;
+
+  animation: moveTop-4;
+  animation-duration: 2s;
+}
+
+.description-5 .talking-box-top {
+  top: -35%;
+
+  animation: moveTop-5;
+  animation-duration: 2s;
+}
+
+.description-5 .talking-box-bottom {
+  top: 10%;
+}
+
 .remove {
   display: none;
 }
@@ -37,5 +55,25 @@
 
   100% {
     top: -38%;
+  }
+}
+
+@keyframes moveTop-4 {
+  0% {
+    top: 12%;
+  }
+
+  100% {
+    top: -44%;
+  }
+}
+
+@keyframes moveTop-5 {
+  0% {
+    top: 12%;
+  }
+
+  100% {
+    top: -35%;
   }
 }
