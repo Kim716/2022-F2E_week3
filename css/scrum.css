@@ -1,3 +1,5 @@
+@import "./mission.css";
+
 .description-2 .talking-box-top {
   top: -8%;
   /* bottom: 90%; */
@@ -78,26 +80,8 @@
 
 /*TODO 重構！*/
 .game-panel {
-  position: absolute;
-  bottom: -3%;
-  left: 12%; /*這裡比較不一樣*/
-
-  height: 80%;
-  width: 76%; /*這裡比較不一樣*/
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
-  text-align: center;
-
-  animation: fadeIn;
-  animation-duration: 1s;
-}
-/*TODO 重構！*/
-.game-panel h3 {
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: var(--dark-grey);
-  margin: 3rem 0;
+  left: 12%; /*!!!*/
+  width: 76%; /*!!!*/
 }
 
 /*TODO 重構！*/

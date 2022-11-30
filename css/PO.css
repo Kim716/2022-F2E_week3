@@ -1,3 +1,5 @@
+@import "./mission.css";
+
 .description .talking-box {
   top: 8%;
 }
@@ -11,35 +13,6 @@
   height: 3rem;
   margin: 0 8px 0 8px;
   vertical-align: top;
-}
-
-.game-panel {
-  position: absolute;
-  bottom: -3%;
-  left: 32%;
-
-  height: 80%;
-  width: 36%;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
-  text-align: center;
-
-  animation: fadeIn;
-  animation-duration: 1s;
-}
-
-.game-panel h3 {
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: var(--dark-grey);
-  margin: 3rem 0;
-}
-
-.game-panel p {
-  font-size: 1.5rem;
-  color: var(--mid-grey);
-  margin: 2rem auto;
 }
 
 /* 拖放區  */

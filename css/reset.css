@@ -339,24 +339,3 @@ html {
     top: -20%;
   }
 }
-
-/* 遊戲畫面 */
-.mission {
-  top: 5%;
-  left: 10%;
-
-  width: 80%;
-  padding: 30px 60px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  animation: slideInDown;
-  animation-duration: 1s;
-}
-
-.mission p {
-  line-height: 3rem;
-  margin-bottom: 0;
-}

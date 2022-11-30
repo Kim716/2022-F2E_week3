@@ -1,3 +1,5 @@
+@import "./mission.css";
+
 /* description-3 */
 .description-guy-3 {
   animation: none;
@@ -40,32 +42,7 @@
 }
 
 .game-panel {
-  position: absolute;
-  bottom: -3%;
-  left: 13%;
-
-  height: 80%;
-  width: 36%;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
-  text-align: center;
-
-  animation: fadeIn;
-  animation-duration: 1s;
-}
-
-.game-panel h3 {
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: var(--dark-grey);
-  margin: 3rem 0;
-}
-
-.game-panel > p {
-  font-size: 1.5rem;
-  color: var(--mid-grey);
-  margin: 2rem auto;
+  left: 13%; /*!!!*/
 }
 
 .drop-here-background,
@@ -97,6 +74,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.productBacklog p {
+  color: var(--dark-grey);
 }
 
 .productBacklog .point-avatar {
