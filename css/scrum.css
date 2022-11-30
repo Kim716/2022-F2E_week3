@@ -8,6 +8,13 @@
   animation: none;
 }
 
+.description-3 .talking-box-top {
+  top: -38%;
+
+  animation: moveTop-3;
+  animation-duration: 2s;
+}
+
 .remove {
   display: none;
 }
@@ -20,5 +27,15 @@
   100% {
     top: -8%;
     /* bottom: 90%; */
+  }
+}
+
+@keyframes moveTop-3 {
+  0% {
+    top: 12%;
+  }
+
+  100% {
+    top: -38%;
   }
 }
