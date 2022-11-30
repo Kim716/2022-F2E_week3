@@ -77,30 +77,9 @@
 }
 
 /* 遊戲畫面 */
-
-/*TODO 重構！*/
 .game-panel {
-  left: 12%; /*!!!*/
-  width: 76%; /*!!!*/
-}
-
-/*TODO 重構！*/
-.finish-btn {
-  border: none;
-  border-radius: 1rem;
-  background: var(--primary-color);
-  padding: 7px 150px;
-  margin-top: 1rem;
-
-  font-size: 2rem;
-  font-weight: 900;
-  color: #fff;
-}
-/*TODO 重構！*/
-.finish-btn:hover {
-  cursor: pointer;
-  background: var(--secondary-color);
-  transition: 0.3s;
+  left: 12%;
+  width: 76%;
 }
 
 .remove {

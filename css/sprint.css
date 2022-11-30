@@ -42,7 +42,7 @@
 }
 
 .game-panel {
-  left: 13%; /*!!!*/
+  left: 13%;
 }
 
 .drop-here-background,
@@ -107,21 +107,8 @@
 }
 
 .finish-btn {
-  border: none;
-  border-radius: 1rem;
-  background: var(--primary-color);
-  padding: 7px 100px;
-  margin-top: 5rem;
-
-  font-size: 2rem;
-  font-weight: 900;
-  color: #fff;
-}
-
-.finish-btn:hover {
-  cursor: pointer;
-  background: var(--secondary-color);
-  transition: 0.3s;
+  padding: 7px 100px; /*!!!*/
+  margin-top: 5rem; /*!!!*/
 }
 
 .remove {
