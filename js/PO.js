@@ -28,8 +28,6 @@ const model = {
 const view = {
   descriptionDOM: document.querySelector(".description"),
 
-  personInChargeDOM: document.querySelector(".description-guy"),
-
   // start, finish, ok, thanks btn 都是用做「continue」
   continueBtns: document.querySelectorAll(".continue-btn"),
 
@@ -50,12 +48,6 @@ const view = {
   toggleRemove: function (target) {
     target.classList.toggle("remove");
   },
-
-  removeEmptySpace: function () {
-    if (document.querySelector(".empty-space")) {
-      document.querySelector(".empty-space").remove();
-    }
-  },
 };
 
 const controller = {
@@ -67,7 +59,6 @@ const controller = {
       // 說明階段
       case GAME_STATE.DescribeGameRule:
         view.toggleRemove(view.descriptionDOM);
-        view.toggleRemove(view.personInChargeDOM);
         view.toggleRemove(view.playView);
         controller.currentState = GAME_STATE.PlayGame;
         break;
@@ -99,6 +90,13 @@ const controller = {
 const dragZone = Sortable.create(view.dragZoneDOM, {
   group: "backlogList",
   animation: 150,
+
+  // 被拖回去的狀況
+  onAdd: function (e) {
+    e.item.classList.remove("static");
+  },
+
+  // TODO 在上面游移會有殘影
 });
 
 const dropZone = Sortable.create(view.dropZoneDOM, {
@@ -106,10 +104,11 @@ const dropZone = Sortable.create(view.dropZoneDOM, {
   animation: 150,
   filter: ".ignore-elements",
 
-  onSort: function (e) {
-    view.removeEmptySpace();
+  onAdd: function (e) {
     e.item.classList.add("static");
+  },
 
+  onSort: function (e) {
     let order = dropZone.toArray();
     model.updateUserOrder(order);
   },
