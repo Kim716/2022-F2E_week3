@@ -40,6 +40,10 @@
   }
 }
 
+.talking-box img {
+  margin-top: 1rem;
+}
+
 .game-title,
 .pink-character,
 .yellow-character,

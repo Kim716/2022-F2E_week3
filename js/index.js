@@ -9,7 +9,7 @@ function readyToChangeStage() {
     "click",
     () => {
       changeStage1();
-      setTimeout(changeStage2, 3000);
+      setTimeout(changeStage2, 4000);
     },
     { once: true }
   );
