@@ -41,10 +41,32 @@
   margin: 3rem 0;
 }
 
-.game-panel p {
+.game-panel > p {
   font-size: 1.5rem;
   color: var(--mid-grey);
   margin: 2rem auto;
+}
+
+/* 拖放空格*/
+.empty-space {
+  border: 2px dashed var(--mid-grey);
+  background: rgba(255, 255, 255, 0.3);
+  height: 21%;
+  margin-bottom: 1rem;
+}
+
+/* 被拖的物件 */
+.productBacklog {
+  margin-bottom: 1rem;
+  border: 1px solid var(--dark-grey);
+  background: #d7ffae;
+  height: 21%;
+  padding: 0 2rem;
+  color: var(--dark-grey);
+  font-size: 1.5rem;
+
+  display: flex;
+  align-items: center;
 }
 
 /* 完成按鈕 */

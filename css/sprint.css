@@ -64,18 +64,7 @@
 }
 
 .productBacklog {
-  margin-bottom: 1rem;
-  border: 1px solid var(--dark-grey);
-  background: #d7ffae;
-  width: 100%;
-  height: 21%;
-  padding: 0 2rem;
-  color: var(--dark-grey);
-  font-size: 1.5rem;
-
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .productBacklog p {
@@ -102,15 +91,9 @@
   color: var(--dark-grey);
 }
 
-.empty-space {
-  margin-bottom: 1rem;
-  border: 2px dashed var(--mid-grey);
-  height: 21%;
-}
-
 .finish-btn {
-  padding: 7px 100px; /*!!!*/
-  margin-top: 5rem; /*!!!*/
+  padding: 7px 100px;
+  margin-top: 5rem;
 }
 
 .remove {
