@@ -8,12 +8,12 @@
 ## Introdution
 _2022 The F2E 4th 第三關「Scrum 新手村」的作品_
 
-現階段完成「開場、創建人物、PO關卡、開發中」畫面及功能，其餘持續開發中。 
-
+現階段完成「開場、創建人物、PO關卡、開發中」畫面及功能，其餘持續開發中。<br/> 
 謝謝 小菜 設計師的設計稿！十分喜歡創建人物領取獎狀的巧思！
 
 _🎉 New Update_
 
+-- 2022.12.01 開放「Scrum 關卡」畫面及功能<br/>
 -- 2022.11.29 開放「Sprint 關卡」畫面及功能
 
 ## Get best experience 
@@ -43,8 +43,8 @@ In desktop(1440 * 800)
 - [x] page that tells project is still in development
 - [x] describe sptint backlog
 - [x] play sptint backlog mission
-- [ ] describe scrum
-- [ ] play scrum mission
+- [x] describe scrum
+- [x] play scrum mission
 - [ ] describe retro
 - [ ] play retro mission
 - [ ] get certificate
