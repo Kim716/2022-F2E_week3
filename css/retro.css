@@ -72,6 +72,11 @@ label input:checked ~ .checkmark {
   border: 3px solid #fff;
 }
 
+.finish-btn {
+  font-size: 2.5rem;
+  margin-top: 5rem;
+}
+
 .remove {
   display: none;
 }
