@@ -29,6 +29,10 @@ const view = {
 
   continueBtns: document.querySelectorAll(".continue-btn"),
 
+  dragZoneDOM: document.querySelector(".drag-here"),
+
+  dropZoneDOMs: document.querySelectorAll(".drop-here"),
+
   toggleRemove: function (target) {
     target.classList.toggle("remove");
   },
@@ -113,6 +117,24 @@ const controller = {
     }
   },
 };
+
+const dragZone = Sortable.create(view.dragZoneDOM, {
+  group: "backlogList",
+  animation: 150,
+});
+
+view.dropZoneDOMs.forEach((dropZoneDOM) => {
+  const dropZone = Sortable.create(dropZoneDOM, {
+    group: "backlogList",
+    animation: 150,
+
+    onChange: function (e) {
+      if (dropZoneDOM.children.length > 1) {
+        e.from.appendChild(dropZoneDOM.children[0]);
+      }
+    },
+  });
+});
 
 // --- EVENT LISTENER --- //
 // EL-1 綁定所有continue-btn
