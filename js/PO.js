@@ -102,7 +102,6 @@ const dragZone = Sortable.create(view.dragZoneDOM, {
 const dropZone = Sortable.create(view.dropZoneDOM, {
   group: "backlogList",
   animation: 150,
-  filter: ".ignore-elements",
 
   onAdd: function (e) {
     e.item.classList.add("static");
