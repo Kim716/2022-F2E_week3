@@ -6,6 +6,10 @@ const userName = localStorage.getItem("userName");
 // --- DOM --- //
 const continueBtn = document.querySelector(".continue-btn");
 
+const photoBtn = document.querySelector(".photo-icon");
+
+const homeBtn = document.querySelector(".home-icon");
+
 const description = document.querySelector(".description-1");
 
 const certificateView = document.querySelector(".certificate-container");
@@ -56,15 +60,50 @@ function renderAvatar(img) {
   avatar.style.backgroundImage = `url('${img}')`;
 }
 
+// function takeShot(screen) {
+//   html2canvas(document.body).then((canvas) => {
+//     let a = document.createElement("a");
+//     a.download = "ss. png";
+//     a.href = canvas.toDataURL("image/png");
+//     a.click();
+//   });
+//   // html2canvas(screen).then((canvas) => {
+//   //   const link = document.createElement("a");
+//   //   link.download = "certificate.png";
+//   //   link.href = canvas.toDataURL("image/png");
+//   //   link.click();
+//   // });
+// }
+
+function takeScreenshot(screen) {
+  certificate.style.animation = "none";
+
+  html2canvas(screen).then(function (canvas) {
+    const link = document.createElement("a");
+
+    link.href = canvas.toDataURL();
+
+    link.download = "screenshot.png";
+
+    link.click();
+  });
+}
+
 // --- EVENTLISTENER --- //
 continueBtn.addEventListener("click", (e) => {
   toggleRemove(description);
   toggleRemove(certificateView);
 });
 
+photoBtn.addEventListener("click", (e) => {
+  takeScreenshot(certificate);
+});
+
+homeBtn.addEventListener("click", (e) => {
+  window.location.assign("../html/index.html");
+});
+
 // --- EXECUTE --- //
 // 渲染證書
 renderCertificate(userName);
 renderAvatar(userImg);
-// 截圖
-// 回首頁
