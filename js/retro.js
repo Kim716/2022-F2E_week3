@@ -43,6 +43,8 @@ const view = {
 
   correctHint: document.querySelector(".correct-hint"),
 
+  notFinishedHint: document.querySelector(".not-finished-hint"),
+
   toggleRemove: function (target) {
     target.classList.toggle("remove");
   },
@@ -61,9 +63,11 @@ const controller = {
         break;
       // --- 遊玩階段 --- //
       case GAME_STATE.PlayGame:
+        controller.currentState = GAME_STATE.AnswerWrong;
+
         // 預防 user 沒寫答案就送出
         if (!model.doUserAnswer("Q1") || !model.doUserAnswer("Q2")) {
-          alert("!");
+          view.toggleRemove(view.notFinishedHint);
           break;
         }
 
@@ -77,11 +81,11 @@ const controller = {
         }
         // 答錯
         view.toggleRemove(view.failHint);
-        controller.currentState = GAME_STATE.AnswerWrong;
         break;
       //  --- 答錯，關閉 modal 才能繼續 --- //
       case GAME_STATE.AnswerWrong:
-        view.toggleRemove(view.failHint);
+        // 不管是 fail or not-finished 能關
+        view.toggleRemove(e.target.parentElement.parentElement);
         controller.currentState = GAME_STATE.PlayGame;
         break;
       // --- 答對，跳轉下一關 --- //
