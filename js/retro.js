@@ -90,7 +90,7 @@ const controller = {
         break;
       // --- 答對，跳轉下一關 --- //
       case GAME_STATE.AnswerCorrect:
-        window.location.assign("../html/develop.html");
+        window.location.assign("../html/certificate.html");
         break;
     }
   },
