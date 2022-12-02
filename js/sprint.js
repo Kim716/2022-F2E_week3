@@ -11,6 +11,8 @@ const GAME_STATE = Object.freeze({
 });
 
 const model = {
+  userName: localStorage.getItem("userName"),
+
   backlogArr: [
     { content: "前台職缺列表（職缺詳細內容、點選可發送應徵意願）", score: 4 },
     { content: "應徵者的線上履歷編輯器", score: 13 },
@@ -40,7 +42,6 @@ const model = {
   updateModelTotalPoints: function () {
     model.totalPoints = 0;
     model.sprintPoints.forEach((point) => (model.totalPoints += point));
-    console.log(model.totalPoints);
   },
 };
 
@@ -66,6 +67,8 @@ const view = {
   dragZoneDOM: document.querySelector(".drag-here"),
 
   dropZoneDOM: document.querySelector(".drop-here"),
+
+  userNameDOM: document.querySelector(".userName"),
 
   // 遊戲結果 modal
   tooLessHint: document.querySelector(".too-less-hint"),
@@ -250,4 +253,6 @@ view.backBtns.forEach((btn) => {
   btn.addEventListener("click", controller.dispatchBackBtn);
 });
 
+// --- RENDER --- //
 view.renderZone(view.dragZoneDOM);
+view.userNameDOM.textContent = model.userName;

@@ -33,7 +33,7 @@ const view = {
 
   playView: document.querySelector(".PO-mission"),
 
-  userNameDOM: document.querySelector(".userName"),
+  userNameDOMs: document.querySelectorAll(".userName"),
 
   // --- modal --- //
   failHint: document.querySelector(".fail-hint"),
@@ -119,5 +119,7 @@ view.continueBtns.forEach((btn) => {
   btn.addEventListener("click", controller.dispatchContinueBtn);
 });
 
-// Render
-view.userNameDOM.textContent = model.userName;
+// --- RENDER --- //
+view.userNameDOMs.forEach((userNameDOM) => {
+  userNameDOM.textContent = model.userName;
+});

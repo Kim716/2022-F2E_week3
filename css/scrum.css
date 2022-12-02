@@ -96,6 +96,7 @@
 
   background-image: url("../assets/image/Scrum 流程圖.png");
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .game-panel .sprint-name {
