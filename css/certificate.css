@@ -1,2 +1,238 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
 @import "./reset.css";
+
+.certificate-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons {
+  position: absolute;
+  top: 3%;
+  right: 15%;
+  width: 6%;
+}
+
+.icon {
+  margin-bottom: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.icon:hover p {
+  color: var(--light-grey);
+}
+
+.icon img {
+  width: 100%;
+}
+
+.icon p {
+  margin-top: -1rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-shadow: 0px 4px 30px rgba(116, 48, 48, 1);
+}
+
+.guy {
+  position: absolute;
+  bottom: 0;
+  height: 26%;
+}
+
+.guy-1 {
+  left: 19%;
+
+  animation: guy-1;
+  animation-duration: 3s;
+}
+
+@keyframes guy-1 {
+  0% {
+    left: -13%;
+  }
+
+  80% {
+    bottom: 0%;
+    left: 19%;
+  }
+
+  90% {
+    bottom: 5%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
+}
+
+.guy-2 {
+  left: 27%;
+
+  animation: guy-2;
+  animation-duration: 3s;
+}
+
+@keyframes guy-2 {
+  0% {
+    left: -13%;
+  }
+
+  80% {
+    bottom: 0%;
+    left: 27%;
+  }
+
+  90% {
+    bottom: 5%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
+}
+
+.guy-3 {
+  right: 27%;
+
+  animation: guy-3;
+  animation-duration: 3s;
+}
+
+@keyframes guy-3 {
+  0% {
+    right: -13%;
+  }
+
+  80% {
+    bottom: 0%;
+    right: 27%;
+  }
+
+  90% {
+    bottom: 5%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
+}
+
+.guy-4 {
+  right: 19%;
+
+  animation: guy-4;
+  animation-duration: 3s;
+}
+
+@keyframes guy-4 {
+  0% {
+    right: -13%;
+  }
+
+  80% {
+    bottom: 0%;
+    right: 19%;
+  }
+
+  90% {
+    bottom: 5%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
+}
+
+/* 證書 */
+.certificate {
+  position: relative;
+  width: 500px;
+  height: 90%;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0px 4px 30px rgba(116, 48, 48, 0.4);
+
+  animation: fadeIn;
+  animation-duration: 1.5s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate-border {
+  border: 5px solid var(--tertiary-color);
+  width: 93%;
+  height: 94%;
+
+  text-align: center;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 43%;
+  background: #fff;
+  width: 14%;
+}
+
+.avatar {
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  background: url("../assets/image/主角2.png");
+  background-size: cover;
+  width: 20%;
+  height: 20%;
+}
+
+.certificate h2,
+.certificate p {
+  color: var(--dark-grey);
+  font-size: 2rem;
+}
+
+.title {
+  margin-top: 6rem;
+
+  font-weight: 700;
+}
+
+.words {
+  width: 80%;
+  margin: 6rem auto 0;
+
+  line-height: 3.5rem;
+}
+
+.principle {
+  margin-top: 6rem;
+}
+
+.principle img {
+  margin-left: 2rem;
+  padding-bottom: 1rem;
+  height: 5rem;
+  vertical-align: middle;
+}
+
+.company {
+  margin-top: 10rem;
+  letter-spacing: 3px;
+}
+
+.certificate .date {
+  margin-top: 1.5rem;
+  font-size: 1.7rem;
+}
+
+.remove {
+  display: none;
+}
