@@ -13,6 +13,7 @@ _2022 The F2E 4th 第三關「Scrum 新手村」的作品_
 
 _🎉 New Update_
 
+-- 2022.12.02 開放「Retro 關卡、證書」畫面及功能<br/>
 -- 2022.12.01 開放「Scrum 關卡」畫面及功能<br/>
 -- 2022.11.29 開放「Sprint 關卡」畫面及功能
 
@@ -23,6 +24,7 @@ In desktop(1440 * 800)
 * CSS
 * JavaScript
 * SortableJS
+* html2canvas
 * Animate.css
 * Google Font
 
@@ -45,6 +47,6 @@ In desktop(1440 * 800)
 - [x] play sptint backlog mission
 - [x] describe scrum
 - [x] play scrum mission
-- [ ] describe retro
-- [ ] play retro mission
-- [ ] get certificate
+- [x] describe retro
+- [x] play retro mission
+- [x] get certificate
