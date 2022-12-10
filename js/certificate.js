@@ -47,6 +47,7 @@ function renderCertificate(name) {
       <p class="principle">
         校長<img src="../assets/image/廖洧杰.png" alt="" />
       </p>
+      <div class="white-space"></div>
       <p class="company">六角學院波利馬資訊科技有限公司</p>
       <p class="date">中華民國 ${yearROC} 年 ${mm} 月 ${dd} 日</p>
     </div>
